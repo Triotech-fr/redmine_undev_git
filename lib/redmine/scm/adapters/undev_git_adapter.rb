@@ -50,7 +50,7 @@ module Redmine::Scm::Adapters
       end
 
       def scm_version_from_command_line
-        shell_out("#{sq_bin} --version --no-color") { |stdin, stdout| return stdout.read.to_s }
+	      shellout("#{sq_bin} --version") { |io| io.read }.to_s
       end
 
     end

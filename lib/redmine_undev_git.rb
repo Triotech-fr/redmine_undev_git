@@ -35,7 +35,7 @@ Dir[File.join(__dir__, 'redmine_undev_git/**/*.rb')].each do |fn|
 end
 
 # Apply patches
-ActionDispatch::Callbacks.to_prepare do
+ActiveSupport::Reloader.to_prepare do
   RedmineUndevGit.prepend_patch RedmineUndevGit::Patches::ProjectPatch, Project
   RedmineUndevGit.prepend_patch RedmineUndevGit::Patches::IssuePatch, Issue
   RedmineUndevGit.prepend_patch RedmineUndevGit::Patches::ChangesetPatch, Changeset

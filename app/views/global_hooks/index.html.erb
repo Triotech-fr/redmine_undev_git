@@ -14,7 +14,6 @@
       <th><%= l(:field_done_ratio) %></th>
       <th><%= l(:field_assigned_to) %></th>
       <th><%= l(:label_custom_field_plural) %></th>
-      <th><%= l(:button_sort) %></th>
       <th width="10%"></th>
     </tr>
     </thead>
@@ -33,13 +32,6 @@
               <span class="hook-field-value"><%= show_value(value) %></span>
             </p>
           <% end -%>
-        </td>
-        <td align="center">
-          <%= reorder_links('global_hook', {
-              controller: 'global_hooks',
-              action:     'update',
-              id:         hook
-          }, :put) %>
         </td>
         <td class="buttons">
           <%= link_to(l(:button_edit), edit_global_hook_path(hook), class: 'icon icon-edit') %>

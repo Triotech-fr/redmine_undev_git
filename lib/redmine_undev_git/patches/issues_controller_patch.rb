@@ -10,9 +10,9 @@ module RedmineUndevGit
           helper_method :remote_revisions
 
           # authorize remote_revision after find project and issue
-          skip_before_filter :authorize, only: [:remove_remote_revision]
-          before_filter only: [:remove_remote_revision] { find_issue }
-          before_filter only: [:remove_remote_revision] { authorize }
+          skip_before_action :authorize, only: [:remove_remote_revision]
+          before_action :find_issue, only: [:remove_remote_revision]
+          before_action :authorized, only: [:remove_remote_revision]
 
         end
       end

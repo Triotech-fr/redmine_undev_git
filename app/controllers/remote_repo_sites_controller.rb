@@ -1,7 +1,7 @@
 class RemoteRepoSitesController < ApplicationController
   layout 'admin'
 
-  before_filter :require_admin
+  before_action :require_admin
 
   helper_method :remote_repo_sites
 

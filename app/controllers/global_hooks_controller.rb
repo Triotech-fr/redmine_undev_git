@@ -1,6 +1,6 @@
 class GlobalHooksController < ApplicationController
 
-  before_filter :authorize_global
+  before_action :authorize_global
 
   layout 'admin'
 

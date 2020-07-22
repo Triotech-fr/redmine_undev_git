@@ -15,14 +15,6 @@
         </p>
       <% end -%>
     </td>
-    <td align="center">
-      <%= reorder_links('project_hook', {
-          controller: 'project_hooks',
-          action:     'update',
-          project_id: project.id,
-          id:         hook.id
-      }, :put) %>
-    </td>
     <td class="buttons">
       <%= link_to_if_authorized(l(:button_edit),
           {
